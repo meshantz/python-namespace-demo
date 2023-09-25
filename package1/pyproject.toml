@@ -1,0 +1,20 @@
+[project]
+name = "ns-a"
+description = "demonstrate namespace packages"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
+]
+requires-python = ">=3.10"
+dynamic = ["version"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+version = { attr = "ns.a.__version__" }
+
+[tool.setuptools]
+packages = ["ns.a"]
